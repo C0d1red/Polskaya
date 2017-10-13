@@ -10,8 +10,6 @@ int pop(void);
      int i, pervi;
      char c;
 
-     otvet = 0;
-
      while(1>0)
      {
 
