@@ -3,11 +3,12 @@
 #include <string.h>
 #include <ctype.h>
 
-void push(int);
-int pop(void);
+void push(float);
+float pop(void);
 
  int main() {
-     int i, pervi;
+     int i;
+     float pervi;
      char c;
 
      while(1>0)
@@ -35,7 +36,7 @@ int pop(void);
             push(pop()/pervi);
             break;
         case '=':
-            printf("%d", pop());
+            printf("%.2f", pop());
            break;
         default:
             break;
@@ -44,15 +45,15 @@ int pop(void);
      return 0;
  }
 
- int res[1000];
+ float res[1000];
  int nomer;
 
 
-  void push(int chislo){
-        int element = chislo;
+  void push(float chislo){
+        float element = chislo;
         res[nomer++] = element;
     }
 
-    int pop(void){
+    float pop(void){
         return res[--nomer];
     }
