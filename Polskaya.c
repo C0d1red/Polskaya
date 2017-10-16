@@ -8,10 +8,10 @@ float pop(void);
 
  int main() {
      int i;
-     float pervi;
+     float x;
      char c;
 
-     while(1>0)
+     do
      {
 
 
@@ -22,8 +22,8 @@ float pop(void);
         switch (c)
         {
         case '-':
-            pervi = pop();
-            push(pop() - pervi);
+            x = pop();
+            push(pop() - x);
             break;
         case '*':
             push(pop() * pop());
@@ -32,8 +32,13 @@ float pop(void);
             push(pop()+pop());
             break;
         case '/':
-            pervi = pop();
-            push(pop()/pervi);
+            x = pop();
+            if (x!=0)
+                push(pop()/x);
+            else{
+                printf("Error, x/0 is impossible");
+                c = '=';
+            }
             break;
         case '=':
             printf("%.2f", pop());
@@ -42,6 +47,7 @@ float pop(void);
             break;
         }
      }
+     while(c != '=');
      return 0;
  }
 
