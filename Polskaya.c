@@ -7,7 +7,6 @@ void push(float);
 float pop(void);
 
  int main() {
-     int i;
      float x;
      char c;
 
